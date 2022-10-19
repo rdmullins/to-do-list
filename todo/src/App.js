@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./Header";
 import InputArea from "./InputArea";
+import Footer from "./Footer";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <div className="container">
             <Header />
             <InputArea />
+            <Footer />
         </div>
     )
 };
