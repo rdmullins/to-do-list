@@ -1,0 +1,50 @@
+# To-Do List Pseudocode
+## Roger Mullins
+
+### Description
+Create an online to-do list manager application.
+For this project, we will be using React and LocalStorage to keep track of todos with full CRUD (Create/Read/Update/Delete) functionality. 
+
+### MVP
+By default, the app should display the items on the to-do list and list their status. The app should retain state upon a revisit of the page using LocalStorage.
+
+### Requirements
+To complete the assignment, you must complete the following:
+1. Dynamically Render the content with React using components
+1. Use Local Storage to store all to-do list data in the browser
+1. Display all to-do list items
+1. Three "views" for the user: 
+    1. All
+    1. Completed
+    1. To-Do (not completed)
+1. Display Prompting text to add item
+1. Cross out or check off one item as "completed"
+1. See a count of remaining items
+1. Remove one item (either hard delete or soft delete/archive)
+1. Check off or cross out all items in one click as a "completed all" function
+1. Remove all completed items (soft delete/archive)
+1. Ability to press a button and all checked off items become active again
+1. Website must be responsive
+1. Website must be styled
+1. Use tools/technologies covered in class
+1. Repo should be public
+
+*A fully functional CRUD (Create, Read, Update, Delete) style application should be demoed at the end of the week.*
+
+### Stretch Goals
+1. Create a flow diagram for the front end architecture to be used in an MVP
+1. Edit To-Do's inline with a doubleclick event that changes it from a rendered text to a text input.
+1. Add a separate “Reminders” set of functionality
+1. Add due dates and alarms to the to-dos that handle pop ups in your browser in an elegant fashion
+1. Automatically mark to-dos with a new status based on done/not done and the time it was due.
+
+# MoSCoW
+
+|Must Have|Should Have|Could Have|Won't Have
+|---|---|---|---|
+|Input Box|README.md |Color Coding | |
+|useState for page view|Animation/Transition on Check|Time/Date||
+|useState for list items|Inline editability|Reminder||
+|localStorage|Desktop vs Mobile Layout|GTD Integration|
+|Counter|||
+
