@@ -20,7 +20,7 @@ function App() {
         <div className="container">
             <Header />
             <InputArea />
-            <Footer />
+            <Footer view={view} setView={setView} />
         </div>
     )
 };
