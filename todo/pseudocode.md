@@ -48,3 +48,108 @@ To complete the assignment, you must complete the following:
 |localStorage|Desktop vs Mobile Layout|GTD Integration|
 |Counter|||
 
+# Components
+
+- App
+    - Header
+    - Input
+    - Page View Area
+        - View Title
+        - To-Do List
+            - Checkbox
+            - Text
+            - Delete Button
+    - Footer
+        - Pending (DEFAULT)
+            - Radio Button
+            - Count
+        - Completed
+            - Radio Button
+            - Count
+        - All
+            - Radio Button
+            - Count
+        - Clear Button
+        - Reactivate Button
+
+# UX Walkthrough
+
+1. BEGIN
+1. Check localStorage
+    1. BEGIN
+    1. If data found
+        1. READ localStorage into setState
+    1. Else
+        1. CREATE localStorage and initialize setState
+    1. END localStorage READ/CREATE
+1. App Render
+    1. BEGIN
+    1. Header/Title Bar
+    1. Text Box
+    1. To-Do Area (Conditional)
+        1. Default View State // ACTIVE
+    1. Footer Area
+        1. Pending To-Dos (Active), with selected radio button and count
+        1. Completed To-Dos with radio button and count
+        1. All To-Dos with radio button and count
+        1. Clear All Completed button
+        1. Reset All to Active button
+        1. STRETCH - Filter by GTD context
+    1. END render
+1. USE CASE: View Pending To-Do Items State = Pending (DEFAULT STATE)
+    1. BEGIN
+    1. READ To-Do Items Array
+    1. MAP to active = true
+    1. BUILD display array + checkbox + delete button
+    1. RETURN display items
+    1. UPDATE display (React re-render)
+    1. END
+1. USE CASE: View All Items / State = All
+    1. BEGIN
+    1. READ To-Do Items Array
+    1. MAP to active = true && active = false
+    1. BUILD display array + checkbox + delete button
+    1. RETURN display items, active first then completed
+    1. UPDATE display (React re-render)
+    1. END
+1. USE CASE: View Completed Items / State = Completed
+    1. BEGIN
+    1. READ To-Do Items Array
+    1. MAP to active = false
+    1. BUILD display array + checkbox + delete button (disabled)
+        1. STRETCH - enable 're-activate' button?
+    1. RETURN display items
+    1. UPDATE display (React re-render)
+    1. END
+1. USE CASE: Add a New Item
+    1. BEGIN
+    1. READ incoming value from text box
+    1. VALIDATE (no blanks allowed)
+    1. ADD new item to array
+    1. UPDATE local storage
+    1. RETURN new display array
+    1. UPDATE display (React re-render)
+    1. END
+1. USE CASE: Mark an Item Completed
+    1. BEGIN
+    1. FIND item in array
+    1. SET active = false
+    1. UPDATE local storage
+    1. RETURN new display array
+    1. UPDATE display (React re-render)
+    1. END
+1. USE CASE: Clear/Archive Completed Items
+    1. BEGIN
+    1. REMOVE all active = false items from array
+    1. DELETE from localStorage
+    1. RETURN new display array
+    1. UPDATE display (React re-render)
+    1. END
+1. USE CASE: Re-Activate Completed Items
+    1. BEGIN
+    1. FILTER array for active = false
+    1. CHANGE active = true
+    1. UPDATE localStorage
+    1. RETURN updated display array
+    1. UPDATE display (React re-render)
+    1. END
