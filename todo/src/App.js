@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./Header";
 import InputArea from "./InputArea";
 import Footer from "./Footer";
+import View from "./View";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <div className="container">
             <Header />
             <InputArea />
+            <View view={view} />
             <Footer view={view} setView={setView} />
         </div>
     )
