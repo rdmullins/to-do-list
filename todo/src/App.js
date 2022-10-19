@@ -17,10 +17,12 @@ function App() {
 
     const [ToDo, setToDo] = useState(localStorage.getItem("ToDo"));
 
+    console.log("ToDo is: ", ToDo);
+
     return (
         <div className="container">
             <Header />
-            <InputArea />
+            <InputArea ToDo={ToDo} setToDo={setToDo} />
             <View view={view} />
             <Footer view={view} setView={setView} />
         </div>
