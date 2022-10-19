@@ -5,6 +5,16 @@ import Header from "./Header";
 import InputArea from "./InputArea";
 
 function App() {
+
+    const [view, setView] = useState("Pending"); // Pending (default), Completed or All
+
+    // Check local storage; if found, READ, if not, CREATE
+    if (localStorage.length == 0) {
+        localStorage.setItem("ToDo", []);
+    };
+
+    const [ToDo, setToDo] = useState(localStorage.getItem("ToDo"));
+
     return (
         <div className="container">
             <Header />
