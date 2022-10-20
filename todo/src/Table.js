@@ -33,19 +33,19 @@ function Table(props) {
 
 
     let pending = props.ToDo.filter(item => item.isActive && item.display).map(item => 
-        <tr>
-            <td>
+        <tr key={item.id}>
+            <td className="col-1">
                 <div className="form-check">
                     <input 
-                        class="form-check-input" 
+                        className="form-check-input" 
                         type="checkbox" 
                         value={item.id} 
                         onClick={HandleCheck}
                     />
                 </div>
             </td>
-            <td key={item.id}>{item.text}</td>
-            <td>
+            <td><span className="fw-bold">{item.text}</span></td>
+            <td className="text-end col-1">
                 <button 
                     type="button" 
                     className="btn btn-outline-danger"
@@ -56,11 +56,11 @@ function Table(props) {
         </tr>);
 
     let completed = props.ToDo.filter(item => (!item.isActive && item.display)).map(item =>         
-    <tr>
-        <td>
+    <tr key={item.id}>
+        <td className="col-1">
             <div className="form-check">
                 <input 
-                    class="form-check-input" 
+                    className="form-check-input" 
                     type="checkbox" 
                     value={item.id}
                     onClick={HandleCheck} 
@@ -68,8 +68,8 @@ function Table(props) {
                 />
             </div>
         </td>
-        <td key={item.id}><span className="text-decoration-line-through">{item.text}</span></td>
-        <td>
+        <td><span className="text-decoration-line-through fst-italic">{item.text}</span></td>
+        <td className="text-end col-1">
             <button 
                     type="button" 
                     className="btn btn-outline-danger"
@@ -80,10 +80,12 @@ function Table(props) {
         </tr>);
 
     return (
-        <table className = "table table-bordered">
-            {(props.view === "Pending") && pending}
-            {(props.view === "Completed") && completed}
-            {(props.view === "All") && pending.concat(completed)}
+        <table className = "table table-hover table-striped">
+            <tbody>
+                {(props.view === "Pending") && pending}
+                {(props.view === "Completed") && completed}
+                {(props.view === "All") && pending.concat(completed)}
+            </tbody>
         </table>
     );
 };

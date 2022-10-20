@@ -63,8 +63,8 @@ function Footer (props) {
 
                 </div>
                 <div className="col-6">
-                    <button type="button" className="btn-danger" onClick={() => handleClick("Clear")}>Clear</button>
-                    <button type="button" className="btn-light" onClick={() => handleClick("Reset")}>Reset</button>
+                    <button type="button" className="btn-lg btn-danger" onClick={() => handleClick("Clear")}>Clear (Remove) Completed</button><br></br>
+                    <button type="button" className="btn-lg btn-light" onClick={() => handleClick("Reset")}>Reset (Uncheck) Completed</button>
                 </div>
             </div>
         </div>
