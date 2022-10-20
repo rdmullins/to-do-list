@@ -10,7 +10,7 @@ function View(props) {
                 {(props.view === "All") && <h1>All</h1>}
             </div>
         </div>
-            <Table view={props.view} ToDo={props.ToDo} />
+            <Table view={props.view} ToDo={props.ToDo} setToDo={props.setToDo} />
         </>
     )
 };

@@ -16,6 +16,7 @@ function App() {
             {
             text: "Initialize Local Storage",
             isActive: false,
+            display: true,
             created: Date.now(),
             updated: "",
             id: Date.now()
@@ -32,7 +33,7 @@ function App() {
         <div className="container">
             <Header />
             <InputArea ToDo={ToDo} setToDo={setToDo} />
-            <View view={view} ToDo={ToDo} />
+            <View view={view} ToDo={ToDo} setToDo={setToDo} />
             <Footer view={view} setView={setView} />
         </div>
     )

@@ -13,6 +13,7 @@ function InputArea(props) {
             ...props.ToDo, { 
                 text: value,
                 isActive: true,
+                display: true,
                 created: Date.now(),
                 updated: null,
                 id: Date.now() }

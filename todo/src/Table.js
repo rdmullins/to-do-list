@@ -3,30 +3,64 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function Table(props) {
 
-    let pending = props.ToDo.filter(item => item.isActive).map(item => 
+    function HandleCheck(id) {
+        let intID = parseInt(id.target.value);
+        let tempToDo = props.ToDo;
+        let hold = props.ToDo.findIndex(item => (item.id===intID));
+
+        if (id.target.checked) {
+            tempToDo[hold].isActive = false;
+        } else {
+            tempToDo[hold].isActive = true;
+       };
+       props.setToDo(tempToDo);
+       localStorage.setItem("ToDo", JSON.stringify(props.ToDo));
+    }
+
+    function HandleDelete(id) {
+        let intID = parseInt(id.target.value);
+        let tempToDo = props.ToDo;
+        let hold = props.ToDo.findIndex(item => (item.id===intID));
+
+        tempToDo[hold].display = false;
+
+        props.setToDo(tempToDo);
+        localStorage.setItem("ToDo", JSON.stringify(props.ToDo));
+    }
+
+
+    let pending = props.ToDo.filter(item => item.isActive && item.display).map(item => 
         <tr>
             <td>
                 <div className="form-check">
                     <input 
                         class="form-check-input" 
                         type="checkbox" 
-                        value="" 
+                        value={item.id} 
+                        onClick={HandleCheck}
                     />
                 </div>
             </td>
             <td>{item.text}</td>
             <td>
-                <button type="button" className="btn btn-outline-danger">X</button>
+                <button 
+                    type="button" 
+                    className="btn btn-outline-danger"
+                    value={item.id}
+                    onClick={HandleDelete}
+                >X</button>
             </td>
         </tr>);
-    let completed = props.ToDo.filter(item => !(item.isActive)).map(item =>         
+
+    let completed = props.ToDo.filter(item => !(item.isActive && item.display)).map(item =>         
     <tr>
         <td>
             <div className="form-check">
                 <input 
                     class="form-check-input" 
                     type="checkbox" 
-                    value="" 
+                    value={item.id}
+                    onClick={HandleCheck} 
                     checked
                 />
             </div>
