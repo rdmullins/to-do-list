@@ -11,7 +11,7 @@ function App() {
     const [view, setView] = useState("Pending"); // Pending (default), Completed or All
 
     // Check local storage; if found, READ, if not, CREATE
-    if (localStorage.length == 0) {
+    if (localStorage.length === 0) {
         localStorage.setItem("ToDo", []);
     };
 
