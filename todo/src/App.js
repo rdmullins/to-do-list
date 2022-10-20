@@ -32,7 +32,7 @@ function App() {
         <div className="container">
             <Header />
             <InputArea ToDo={ToDo} setToDo={setToDo} />
-            <View view={view} />
+            <View view={view} ToDo={ToDo} />
             <Footer view={view} setView={setView} />
         </div>
     )
