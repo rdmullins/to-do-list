@@ -5,21 +5,24 @@ function InputArea(props) {
     const [ newItem, setNewItem ] = useState('');
 
     function addItem(value) {
-        //console.log("Item entered is: ", value);
-        //console.log("ToDo (coming in to the InputArea.addItem function: ", props.ToDo);
-        console.log("Value of ToDo PRIOR to setter function: ", props.ToDo);
-        console.log("Using setter function to add ", value);
-        props.setToDo([
+
+        if (value.length === 0) {
+            //alert("Tasks cannot be blank.");
+            return;
+        };
+
+        let newTodos = [
             ...props.ToDo, { 
                 text: value,
                 isActive: true,
+                display: true,
                 created: Date.now(),
                 updated: null,
                 id: Date.now() }
-        ]);
-        console.log("Value of state ToDo AFTER setter function: ", props.ToDo);
-        console.log("Adding updated ToDo to localStorage.");
-        localStorage.setItem("ToDo", JSON.stringify(props.ToDo));
+        ]
+        props.setToDo(newTodos);
+        localStorage.setItem("ToDo", JSON.stringify(newTodos));
+        props.setView("Pending");
     };
 
     return (
