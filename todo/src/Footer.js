@@ -2,7 +2,6 @@ function Footer (props) {
 
     function handleRadioChange(viewChange) {
         props.setView(viewChange);
-        console.log("State view changed to ", viewChange);
     }
 
     function handleClick(button) {

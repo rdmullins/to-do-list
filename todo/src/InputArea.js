@@ -5,7 +5,13 @@ function InputArea(props) {
     const [ newItem, setNewItem ] = useState('');
 
     function addItem(value) {
-        props.setToDo([
+
+        if (value.length === 0) {
+            //alert("Tasks cannot be blank.");
+            return;
+        };
+
+        let newTodos = [
             ...props.ToDo, { 
                 text: value,
                 isActive: true,
@@ -13,8 +19,10 @@ function InputArea(props) {
                 created: Date.now(),
                 updated: null,
                 id: Date.now() }
-        ]);
-        localStorage.setItem("ToDo", JSON.stringify(props.ToDo));
+        ]
+        props.setToDo(newTodos);
+        localStorage.setItem("ToDo", JSON.stringify(newTodos));
+        props.setView("Pending");
     };
 
     return (

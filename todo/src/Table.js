@@ -5,7 +5,7 @@ function Table(props) {
 
     function HandleCheck(id) {
         let intID = parseInt(id.target.value);
-        let tempToDo = props.ToDo;
+        let tempToDo = [...props.ToDo];
         let hold = props.ToDo.findIndex(item => (item.id===intID));
 
         if (id.target.checked) {
@@ -13,19 +13,22 @@ function Table(props) {
         } else {
             tempToDo[hold].isActive = true;
        };
+
        props.setToDo(tempToDo);
        localStorage.setItem("ToDo", JSON.stringify(props.ToDo));
+       //props.setView("Pending");
     }
 
     function HandleDelete(id) {
         let intID = parseInt(id.target.value);
-        let tempToDo = props.ToDo;
+        let tempToDo = [...props.ToDo];
         let hold = props.ToDo.findIndex(item => (item.id===intID));
 
         tempToDo[hold].display = false;
 
         props.setToDo(tempToDo);
         localStorage.setItem("ToDo", JSON.stringify(props.ToDo));
+        //props.setView("Pending");
     }
 
 
@@ -41,7 +44,7 @@ function Table(props) {
                     />
                 </div>
             </td>
-            <td>{item.text}</td>
+            <td key={item.id}>{item.text}</td>
             <td>
                 <button 
                     type="button" 
@@ -52,7 +55,7 @@ function Table(props) {
             </td>
         </tr>);
 
-    let completed = props.ToDo.filter(item => !(item.isActive && item.display)).map(item =>         
+    let completed = props.ToDo.filter(item => (!item.isActive && item.display)).map(item =>         
     <tr>
         <td>
             <div className="form-check">
@@ -61,13 +64,18 @@ function Table(props) {
                     type="checkbox" 
                     value={item.id}
                     onClick={HandleCheck} 
-                    checked
+                    defaultChecked
                 />
             </div>
         </td>
-        <td><span className="text-decoration-line-through">{item.text}</span></td>
+        <td key={item.id}><span className="text-decoration-line-through">{item.text}</span></td>
         <td>
-            <button type="button" className="btn btn-outline-danger">X</button>
+            <button 
+                    type="button" 
+                    className="btn btn-outline-danger"
+                    value={item.id}
+                    onClick={HandleDelete}
+                >X</button>
         </td>
         </tr>);
 

@@ -1,5 +1,5 @@
 // Imports go Here
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./Header";
 import InputArea from "./InputArea";
@@ -32,9 +32,9 @@ function App() {
     return (
         <div className="container">
             <Header />
-            <InputArea ToDo={ToDo} setToDo={setToDo} />
-            <View view={view} ToDo={ToDo} setToDo={setToDo} />
-            <Footer view={view} setView={setView} />
+            <InputArea ToDo={ToDo} setToDo={setToDo} view={view} setView={setView} />
+            <View view={view} setView={setView} ToDo={ToDo} setToDo={setToDo} />
+            <Footer view={view} setView={setView} ToDo={ToDo} setToDo={setToDo} />
         </div>
     )
 };
