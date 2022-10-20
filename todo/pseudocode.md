@@ -48,6 +48,49 @@ To complete the assignment, you must complete the following:
 |localStorage|Desktop vs Mobile Layout|GTD Integration|
 |Counter|||
 
+# Thinking in React
+
+1. Break UI Into Components
+    - App
+    - Header
+    - Input
+    - Page View Area
+        - View Title
+        - To-Do List
+            - Checkbox
+            - Text
+            - Delete Button
+    - Footer
+        - Pending (DEFAULT)
+            - Radio Button
+            - Count
+        - Completed
+            - Radio Button
+            - Count
+        - All
+            - Radio Button
+            - Count
+        - Clear Button
+        - Reactivate Button
+1. Build a Static Version in React / COMPLETED
+1. Find the Minimal But Complete Representation of State
+    - View
+        - Pending
+        - Completed
+        - All
+    - ToDoList
+1. Identify Where State Should Live
+    - App
+1. Add Inverse Data Flow
+    - View
+        - Setter is available from the Footer component, where the view can be changed
+    - ToDoList
+        - Setter is available from the following components:
+            - InputArea (items can be added)
+            - Table (existing items can be changed)
+            - Footer (Clear and Reset buttons)
+
+
 # Components
 
 - App
