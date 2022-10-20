@@ -14,11 +14,11 @@ function App() {
     if (localStorage.length === 0) {
         localStorage.setItem("ToDo", JSON.stringify([
             {
-            text: "",
+            text: "Initialize Local Storage",
             isActive: false,
-            created: "",
+            created: Date.now(),
             updated: "",
-            id: 0
+            id: Date.now()
         }
         ]));
     };
