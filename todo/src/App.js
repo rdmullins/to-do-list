@@ -10,23 +10,21 @@ function App() {
 
     const [view, setView] = useState("Pending"); // Pending (default), Completed or All
 
-    const ToDoList = [
-        {
-        text: "",
-        isActive: false,
-        created: "",
-        updated: "",
-        id: 0
-    }];
-
-    console.log(ToDoList);
-
-    // Check local storage; if found, READ, if not, CREATE
+    // Check local storage; if not found, CREATE
     if (localStorage.length === 0) {
-        localStorage.setItem("ToDo", []);
+        localStorage.setItem("ToDo", JSON.stringify([
+            {
+            text: "",
+            isActive: false,
+            created: "",
+            updated: "",
+            id: 0
+        }
+        ]));
     };
 
-    const [ToDo, setToDo] = useState(localStorage.getItem("ToDo"));
+    // READ ToDo array from localStorage
+    const [ToDo, setToDo] = useState(JSON.parse(localStorage.getItem(("ToDo"))));
 
     console.log("ToDo is: ", ToDo);
 
