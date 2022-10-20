@@ -26,7 +26,7 @@ function App() {
     // READ ToDo array from localStorage
     const [ToDo, setToDo] = useState(JSON.parse(localStorage.getItem(("ToDo"))));
 
-    console.log("ToDo is: ", ToDo);
+    //console.log("ToDo is: ", ToDo);
 
     return (
         <div className="container">
