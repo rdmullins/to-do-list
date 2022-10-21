@@ -32,8 +32,8 @@ To complete the assignment, you must complete the following:
 *A fully functional CRUD (Create, Read, Update, Delete) style application should be demoed at the end of the week.*
 
 ### Stretch Goals
-1. Create a flow diagram for the front end architecture to be used in an MVP
-1. Edit To-Do's inline with a doubleclick event that changes it from a rendered text to a text input.
+1. ✓ Create a flow diagram for the front end architecture to be used in an MVP
+1. ✓ (Sorta) Edit To-Do's inline with a doubleclick event that changes it from a rendered text to a text input.
 1. Add a separate “Reminders” set of functionality
 1. Add due dates and alarms to the to-dos that handle pop ups in your browser in an elegant fashion
 1. Automatically mark to-dos with a new status based on done/not done and the time it was due.
@@ -42,11 +42,11 @@ To complete the assignment, you must complete the following:
 
 |Must Have|Should Have|Could Have|Won't Have
 |---|---|---|---|
-|Input Box|README.md |Color Coding | |
-|useState for page view|Animation/Transition on Check|Time/Date||
-|useState for list items|Inline editability|Reminder||
-|localStorage|Desktop vs Mobile Layout|GTD Integration|
-|Counter|||
+|✓ Input Box|README.md |Color Coding | |
+|✓ useState for page view|Animation/Transition on Check|Time/Date||
+|✓ useState for list items|✓ Inline editability|Reminder||
+|✓ localStorage|Desktop vs Mobile Layout|GTD Integration|
+|✓Counter|||
 
 # Thinking in React
 
