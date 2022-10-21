@@ -5,14 +5,15 @@ function Table(props) {
 
     function editRow(id) {
         // let intID = id.target.__reactProps$v9qj24wst3.value;
-        console.log("In editRow(), where the value passed in is ", id);
+        //console.log("In editRow(), where the value passed in is ", id);
         let newText = prompt("New text for to-do item?");
-            if (newText === "") {
+            if (newText === "" || newText===null) {
                 return;
             };
         let tempToDo = [...props.ToDo];
         let hold = props.ToDo.findIndex(item => (item.id===id));
         tempToDo[hold].text = newText;
+        tempToDo[hold].updated = Date.now();
         props.setToDo(tempToDo);
         localStorage.setItem("ToDo", JSON.stringify(props.ToDo));
     };
