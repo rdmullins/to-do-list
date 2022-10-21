@@ -44,10 +44,10 @@ To complete the assignment, you must complete the following:
 
 |Must Have|Should Have|Could Have|Won't Have
 |---|---|---|---|
-|✓ Input Box|README.md |Color Coding | |
-|✓ useState for page view|Animation/Transition on Check|✓ Time/Date||
-|✓ useState for list items|✓ Inline editability|Reminder||
-|✓ localStorage|Desktop vs Mobile Layout|GTD Integration|
+|✓ Input Box|✓ README.md |✓ Time/Date |Color Coding |
+|✓ useState for page view|✓ Animation/Transition on Check|Reminder|GTD Integration|
+|✓ useState for list items|✓ Inline editability|||
+|✓ localStorage|Desktop vs Mobile Layout||
 |✓Counter|||
 
 # Thinking in React
