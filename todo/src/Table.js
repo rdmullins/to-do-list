@@ -59,7 +59,16 @@ function Table(props) {
                     />
                 </div>
             </td>
-            <td value={item.id} onDoubleClick={() => editRow(item.id)}><span className="fw-bold">{item.text}</span></td>
+            <td className="col-6" value={item.id} onDoubleClick={() => editRow(item.id)}><span className="fw-bold">{item.text}</span></td>
+            <td className="col-4">
+                <small className="fst-italic">
+                    Created: {Date(item.created).toString()}
+                </small>
+                <br></br>
+                <small className="fst-italic">
+                    Last Updated: {Date(item.updated).toString()}
+                </small>
+            </td>
             <td className="text-end col-1">
                 <button 
                     type="button" 
@@ -71,28 +80,37 @@ function Table(props) {
         </tr>);
 
     let completed = props.ToDo.filter(item => (!item.isActive && item.display)).map(item =>         
-    <tr key={item.id}>
-        <td className="col-1">
-            <div className="form-check">
-                <input 
-                    className="form-check-input" 
-                    type="checkbox" 
-                    value={item.id}
-                    onClick={HandleCheck} 
-                    defaultChecked
-                />
-            </div>
-        </td>
-        <td><span className="text-decoration-line-through fst-italic">{item.text}</span></td>
-        <td className="text-end col-1">
-            <button 
-                    type="button" 
-                    className="btn btn-outline-danger"
-                    value={item.id}
-                    onClick={HandleDelete}
-                >X</button>
-        </td>
-    </tr>);
+        <tr key={item.id}>
+            <td className="col-1">
+                <div className="form-check">
+                    <input 
+                        className="form-check-input" 
+                        type="checkbox" 
+                        value={item.id}
+                        onClick={HandleCheck} 
+                        defaultChecked
+                    />
+                </div>
+            </td>
+            <td class="col-6"><span className="text-decoration-line-through fst-italic">{item.text}</span></td>
+            <td className="col-4">
+                    <small className="fst-italic">
+                        Created: {Date(item.created).toString()}
+                    </small>
+                    <br></br>
+                    <small className="fst-italic">
+                        Last Updated: {Date(item.updated).toString()}
+                    </small>
+            </td>
+            <td className="text-end col-1">
+                <button 
+                        type="button" 
+                        className="btn btn-outline-danger"
+                        value={item.id}
+                        onClick={HandleDelete}
+                    >X</button>
+            </td>
+        </tr>);
 
     return (
         <table className = "table table-hover table-striped overflow-auto h-auto">
