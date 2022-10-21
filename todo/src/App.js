@@ -16,11 +16,11 @@ function App() {
             {
             text: "Initialize Local Storage",
             isActive: false,
-            display: true,
+            display: false,
             created: Date.now(),
-            updated: "",
+            updated: Date.now(),
             id: Date.now()
-        }
+            }
         ]));
     };
 

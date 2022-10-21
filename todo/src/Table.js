@@ -4,14 +4,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function Table(props) {
 
     function editRow(id) {
-        let intID = id.target.__reactProps$v9qj24wst3.value;
-        console.log("In editRow(), where the value passed in is ", id.target.__reactProps$v9qj24wst3.value);
+        // let intID = id.target.__reactProps$v9qj24wst3.value;
+        console.log("In editRow(), where the value passed in is ", id);
         let newText = prompt("New text for to-do item?");
             if (newText === "") {
                 return;
             };
         let tempToDo = [...props.ToDo];
-        let hold = props.ToDo.findIndex(item => (item.id===intID));
+        let hold = props.ToDo.findIndex(item => (item.id===id));
         tempToDo[hold].text = newText;
         props.setToDo(tempToDo);
         localStorage.setItem("ToDo", JSON.stringify(props.ToDo));
@@ -58,7 +58,7 @@ function Table(props) {
                     />
                 </div>
             </td>
-            <td value={item.id} onDoubleClick={editRow}><span className="fw-bold">{item.text}</span></td>
+            <td value={item.id} onDoubleClick={() => editRow(item.id)}><span className="fw-bold">{item.text}</span></td>
             <td className="text-end col-1">
                 <button 
                     type="button" 
