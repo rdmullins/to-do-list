@@ -45,7 +45,7 @@ To complete the assignment, you must complete the following:
 |Must Have|Should Have|Could Have|Won't Have
 |---|---|---|---|
 |✓ Input Box|README.md |Color Coding | |
-|✓ useState for page view|Animation/Transition on Check|Time/Date||
+|✓ useState for page view|Animation/Transition on Check|✓ Time/Date||
 |✓ useState for list items|✓ Inline editability|Reminder||
 |✓ localStorage|Desktop vs Mobile Layout|GTD Integration|
 |✓Counter|||
