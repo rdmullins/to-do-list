@@ -38,6 +38,8 @@ To complete the assignment, you must complete the following:
 1. Add due dates and alarms to the to-dos that handle pop ups in your browser in an elegant fashion
 1. Automatically mark to-dos with a new status based on done/not done and the time it was due.
 
+![UML Diagram](todo/src/To-Do List UML.png "UML Diagram")
+
 # MoSCoW
 
 |Must Have|Should Have|Could Have|Won't Have
