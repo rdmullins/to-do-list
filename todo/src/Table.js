@@ -77,10 +77,10 @@ function Table(props) {
                     onClick={HandleDelete}
                 >X</button>
         </td>
-        </tr>);
+    </tr>);
 
     return (
-        <table className = "table table-hover table-striped">
+        <table className = "table table-hover table-striped overflow-auto">
             <tbody>
                 {(props.view === "Pending") && pending}
                 {(props.view === "Completed") && completed}
